@@ -119,8 +119,8 @@ int setup() {
 
   printf("\n");
   printA(INFO,
-         "STAGE 1: Success, With %d warnings.\n\t \033[32mOK\033[0m: %d\t "
-         "\033[33mWARN\033[0m: %d\n",
+         "STAGE 1: Success, With %d warnings.\n\t " OK_COLOR "OK" RESET
+         ": %d\t " WARN_COLOR "WARN" RESET ": %d\n",
          warnC, okC, warnC);
 
   printf("\n");
@@ -163,8 +163,8 @@ int setup() {
 
   printf("\n");
   printA(INFO,
-         "STAGE 2: Success, With %d warnings.\n\t \033[32mOK\033[0m: "
-         "%d\t\033[33mWARN\033[0m: %d\n",
+         "STAGE 2: Success, With %d warnings.\n\t " OK_COLOR "OK" RESET
+         ": %d\t " WARN_COLOR "WARN" RESET ": %d\n",
          warnC, okC, warnC);
 
   free(out);

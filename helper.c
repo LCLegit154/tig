@@ -12,19 +12,19 @@ int printA(int mode, const char *fmt, ...) {
   va_start(args, fmt);
 
   if (mode == INFO) {
-    printf("[ \033[36mINFO\033[0m ] ");
+    printf("[ " INFO_COLOR "INFO" RESET " ] ");
   }
 
   if (mode == OK) {
-    printf("[  \033[32mOK\033[0m  ] ");
+    printf("[ " OK_COLOR "OK" RESET " ] ");
   }
 
   if (mode == WARN) {
-    printf("[ \033[33mWARN\033[0m ] ");
+    printf("[ " WARN_COLOR "WARN" RESET " ] ");
   }
 
   if (mode == FAIL) {
-    printf("[ \033[31mFAIL\033[0m ] ");
+    printf("[ " FAIL_COLOR "FAIL" RESET " ] ");
   }
 
   vprintf(fmt, args);
