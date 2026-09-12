@@ -16,7 +16,7 @@ int printA(int mode, const char *fmt, ...) {
   }
 
   if (mode == OK) {
-    printf("[ " OK_COLOR "OK" RESET " ] ");
+    printf("[ " OK_COLOR " OK " RESET " ] ");
   }
 
   if (mode == WARN) {
