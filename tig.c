@@ -28,7 +28,7 @@ int setup() {
   int warnC = 0;
   int okC = 0;
 
-  char *out;
+  char *out = NULL;
 
   printA(INFO, "TIG version=DEVELOPMENT\n");
   printA(WARN, "No compatibility inputted.\n\t Defaulting to tig-only\n");
@@ -179,5 +179,9 @@ int main(int argc, char **argv) {
   if (strcmp(argv[1], "setup") == 0) {
     setup();
   }
+  if (strcmp(argv[1], "author") == 0) {
+    fprintf(stdout, "Aliases: LCLegit154/Haxkcs/btfluxify/haxs/Jamovi/JMP\n");
+  }
+
   return EXIT_SUCCESS;
 }
