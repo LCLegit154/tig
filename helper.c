@@ -118,7 +118,13 @@ int readFile_(char *path, char **out) {
 
   fclose(file);
 
-  *out = data;
+  *out = malloc(size + 1);
+  if (!(*out))
+    return -1;
+
+  (*out)[size + 1] = '\0';
+
+  memcpy(*out, data, size);
 
   return 0;
 }
