@@ -122,7 +122,7 @@ int readFile_(char *path, char **out) {
   if (!(*out))
     return -1;
 
-  (*out)[size + 1] = '\0';
+  (*out)[size] = '\0';
 
   memcpy(*out, data, size);
 
