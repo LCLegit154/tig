@@ -5,23 +5,6 @@
 
 #include "helper.h"
 
-#define TIG_CONFIG_DIR "/.config/tig"
-#define TIG_LOCAL_CONFIG_DIR "/.tig/"
-
-int createDirectory(char *filename) {
-  int returnCode = mkdir(filename, 0700);
-  return returnCode;
-}
-
-int createFile(char *filename) {
-  FILE *file = fopen(filename, "w");
-  if (file == NULL) {
-    return -1;
-  }
-  fclose(file);
-  return 0;
-}
-
 int setup() {
   struct stat stats;
 
@@ -134,7 +117,7 @@ int setup() {
 
   if (getGlobalFile(&out) != 0) {
     printA(FAIL, "Fatal Error: {%s/%s} does not exist!\n", HOME_DIR,
-           TIG_CONFIG_DIR);
+           GLOBAL_CONFIG_DIR);
     return -1;
   }
 
@@ -146,7 +129,7 @@ int setup() {
   okC += 1;
 
   if (getLocalFile(&out) != 0) {
-    printA(FAIL, "Warning: {%s} does not exist!\n", TIG_LOCAL_CONFIG_DIR);
+    printA(FAIL, "Warning: {%s} does not exist!\n", LOCAL_CONFIG_DIR);
     return -1;
   }
 

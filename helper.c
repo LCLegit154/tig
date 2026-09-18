@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
 
 #include <stdarg.h>
 
@@ -143,5 +144,19 @@ int writeFile_(char *path, const char *content, ...) {
     return -1;
   }
   va_end(args);
+  return 0;
+}
+
+int createDirectory(const char *name) {
+  int returnCode = mkdir(name, 0700);
+  return returnCode;
+}
+
+int createFile(const char *filename) {
+  FILE *file = fopen(filename, "w");
+  if (file == NULL) {
+    return -1;
+  }
+  fclose(file);
   return 0;
 }

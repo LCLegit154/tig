@@ -24,5 +24,7 @@ int getLocalFile(char **out);
 int getDir(char *s1, char *s2, char **out);
 int readFile_(char *path, char **out);
 int writeFile_(char *path, const char *content, ...);
+int createDirectory(const char *name);
+int createFile(const char *filename);
 
 #endif
